@@ -1532,3 +1532,19 @@ textarea.form-control {
         max-width: 100%;
     }
 }
+
+.navbar-logo {
+    height: 35px;  /* Adjust this value to make it larger or smaller */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive sizing for mobile */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 28px;
+    }
