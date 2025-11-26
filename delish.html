@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delish Case Study — Ashley Dinh</title>
+    <meta name="description" content="A marketing case study for Delish - a social media app for searching and sharing food recommendations">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Alice:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <a href="#hero" data-section="hero">
+            <span class="nav-label">Top</span>
+        </a>
+        <a href="#summary" data-section="summary">
+            <span class="nav-label">Summary</span>
+        </a>
+        <a href="#research" data-section="research">
+            <span class="nav-label">Research</span>
+        </a>
+        <a href="#testing" data-section="testing">
+            <span class="nav-label">Testing</span>
+        </a>
+        <a href="#product" data-section="product">
+            <span class="nav-label">Product</span>
+        </a>
+    </nav>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">
+                    <span class="logo-text">AD</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                UX Case Studies
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="delish.html">Delish - Marketing Campaign</a></li>
+                                <li><a class="dropdown-item" href="sweatsaga.html">Sweat Saga - Fitness App</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Gallery
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="comfort.html">Comfort - Mixed Media</a></li>
+                                <li><a class="dropdown-item" href="phases.html">Phases - Video Animation</a></li>
+                                <li><a class="dropdown-item" href="multifacted.html">Multifaceted - Installation</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Work
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html#design-work">Design Work</a></li>
+                                <li><a class="dropdown-item" href="index.html#exhibitions">Art Exhibitions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://drive.google.com/file/d/1i9K53irpAGM0gltCM4hmlyQTfUrJkYIq/view" target="_blank">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link social-icon" href="https://www.linkedin.com/in/ashleyldinh" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section-portfolio" id="hero">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="marketing-badge"><i class="fas fa-chart-line me-2"></i>Marketing Case Study</span>
+                <img src="images/delish-logo.png" 
+                     alt="Delish" 
+                     class="img-fluid mb-4 mt-3" 
+                     style="max-width: 500px;">
+                <h1 class="display-4 mt-4">Eat and Socialize</h1>
+                <p class="lead text-muted">A marketing-first approach to building a social food discovery platform</p>
+                <p class="text-muted"><em>End-to-end product strategy, design, and go-to-market execution</em></p>
+            </div>
+            
+            <!-- Project Meta -->
+            <div class="row g-3 my-5 text-center">
+                <div class="col-6 col-md-2">
+                    <p class="text-uppercase opacity-75 mb-1" style="font-size: 0.75rem;"><em>Role</em></p>
+                    <p class="mb-0" style="font-size: 0.875rem;"><strong>Solo Project</strong><br>Marketing + Design</p>
+                </div>
+                <div class="col-6 col-md-2">
+                    <p class="text-uppercase opacity-75 mb-1" style="font-size: 0.75rem;"><em>Timeline</em></p>
+                    <p class="mb-0" style="font-size: 0.875rem;">Mar - May 2024<br>10 weeks</p>
+                </div>
+                <div class="col-6 col-md-2">
+                    <p class="text-uppercase opacity-75 mb-1" style="font-size: 0.75rem;"><em>Scope</em></p>
+                    <p class="mb-0" style="font-size: 0.875rem;">Strategy to<br>Visual Design</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="text-uppercase opacity-75 mb-1" style="font-size: 0.75rem;"><em>Focus Areas</em></p>
+                    <p class="mb-0" style="font-size: 0.875rem;">Market Analysis, GTM Strategy,<br>Product Design, A/B Testing</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="text-uppercase opacity-75 mb-1" style="font-size: 0.75rem;"><em>Tools</em></p>
+                    <p class="mb-0" style="font-size: 0.875rem;">Figma, Adobe CC, Canva<br>Survey Analytics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Executive Summary -->
+    <section class="py-5" style="background-color: #FEF9F4;" id="summary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="mb-4 text-center">Executive Summary</h2>
+                    <p class="lead text-center mb-5">
+                        I developed Delish as a <strong>marketing-first product strategy</strong>—conducting market research, defining competitive positioning, designing the product experience, and creating a scalable brand system for go-to-market execution.
+                    </p>
+                    
+                    <!-- Key Stats -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <div class="stat-number">18-28</div>
+                                <div class="stat-label">Target Demographic</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <div class="stat-number">10</div>
+                                <div class="stat-label">User Surveys<br>Conducted</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Competitors<br>Analyzed</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="stat-card">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">A/B Test<br>Variations</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Highlights -->
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="highlight-box">
+                                <h5 class="mb-3"><i class="fas fa-search me-2"></i>Market Research</h5>
+                                <p class="mb-0" style="font-size: 0.95rem;"><strong>I conducted</strong> primary research with 10 Gen Z users and competitive analysis of 5 platforms to identify market gaps and validate product need.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="highlight-box">
+                                <h5 class="mb-3"><i class="fas fa-rocket me-2"></i>GTM Strategy</h5>
+                                <p class="mb-0" style="font-size: 0.95rem;"><strong>I designed</strong> a growth-focused architecture leveraging social graphs for viral acquisition, creating a frictionless conversion loop.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="highlight-box">
+                                <h5 class="mb-3"><i class="fas fa-palette me-2"></i>Brand System</h5>
+                                <p class="mb-0" style="font-size: 0.95rem;"><strong>I built</strong> a complete Design System with documentation ensuring brand consistency and scalable campaign execution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Preview -->
+    <section class="py-5">
+        <div class="container">
+            <img src="images/delish-three-screens.png" 
+                 alt="Delish App Screens" 
+                 class="img-fluid">
+        </div>
+    </section>
+    
+    <!-- Research & Strategy -->
+    <section class="py-5" id="research">
+        <div class="container">
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>01.<br>Market<br>Research</h6>
+                </div>
+                <div>
+                    <h3 class="mb-4">Identifying the Market Opportunity</h3>
+                    <p class="mb-4"><strong>My research approach:</strong> I conducted primary research through user surveys and secondary research via competitive analysis to validate product-market fit before any design work began.</p>
+                    
+                    <h5 class="mt-4 mb-3">Primary Research: User Surveys</h5>
+                    <p>I surveyed 10 Gen Z/Millennial food enthusiasts (ages 18-28) to understand their pain points:</p>
+                    <ul class="mb-4">
+                        <li><strong>90% reported frustration</strong> with finding occasion-specific restaurant recommendations</li>
+                        <li><strong>80% use multiple apps</strong> (Instagram, Yelp, Google) for food discovery—indicating fragmented experience</li>
+                        <li><strong>70% wanted better filtering</strong> for dietary restrictions and occasion types</li>
+                        <li><strong>85% trust recommendations</strong> from friends over influencers or ads</li>
+                    </ul>
+                    
+                    <h5 class="mt-4 mb-3">Competitive Analysis</h5>
+                    <p>I analyzed 5 competitors (Yelp, Instagram, TikTok, Beli, The Infatuation) across key dimensions:</p>
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-6">
+                            <div class="highlight-box">
+                                <h6>❌ Gaps Identified</h6>
+                                <ul class="mb-0" style="font-size: 0.9rem;">
+                                    <li>Poor personalization algorithms</li>
+                                    <li>Weak social/sharing features</li>
+                                    <li>No occasion-based filtering</li>
+                                    <li>Limited network effects</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="highlight-box">
+                                <h6>✅ Opportunity Space</h6>
+                                <ul class="mb-0" style="font-size: 0.9rem;">
+                                    <li>Dedicated food-first platform</li>
+                                    <li>Social sharing as core feature</li>
+                                    <li>Advanced filtering system</li>
+                                    <li>Trust through friend networks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>02.<br>Marketing<br>Strategy</h6>
+                </div>
+                <div>
+                    <h3 class="mb-4">Growth-Focused Product Architecture</h3>
+                    <p class="lead mb-4">Based on my research insights, I designed the product around a <strong>Frictionless Conversion Loop</strong> that maximizes <strong>Organic Acquisition</strong> through social graph leverage.</p>
+                    
+                    <div class="highlight-box mb-4">
+                        <h5 class="mb-3">Marketing-First Product Principles</h5>
+                        <p class="mb-3"><em>I established these principles to guide both product design and go-to-market strategy:</em></p>
+                    </div>
+                    
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h6><strong>1. Viral Loop Engineering</strong></h6>
+                                <p style="font-size: 0.95rem;">Every saved restaurant prompts a share action, creating exponential user acquisition through friend networks</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h6><strong>2. Zero-Friction Onboarding</strong></h6>
+                                <p style="font-size: 0.95rem;">Immediate value delivery—search and discover before account creation to reduce drop-off</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h6><strong>3. Personalization as Retention</strong></h6>
+                                <p style="font-size: 0.95rem;">Advanced filters create unique value proposition vs. competitors, increasing daily active usage</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h6><strong>4. Trust-Based Network Effects</strong></h6>
+                                <p style="font-size: 0.95rem;">Friend recommendations over algorithms build credibility and organic word-of-mouth growth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testing & Validation -->
+    <section class="py-5" style="background-color: #F5F0EB;" id="testing">
+        <div class="container">
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>03.<br>A/B<br>Testing</h6>
+                </div>
+                <div>
+                    <h3 class="mb-4">Feature Adoption Study: Testing for Maximum Conversion</h3>
+                    
+                    <div class="highlight-box mb-5">
+                        <h5 class="mb-3">Testing Methodology</h5>
+                        <p class="mb-3"><strong>Hypothesis:</strong> Which UI design best facilitates the discovery-to-share flow and maximizes first-share conversion rate?</p>
+                        <p class="mb-3"><strong>My Testing Approach:</strong></p>
+                        <ul class="mb-0">
+                            <li>Created 2 distinct UI variations with different information architecture</li>
+                            <li>Recruited 8 participants from target demographic (ages 21-27)</li>
+                            <li>Measured: Task completion time, error rate, and first-share conversion</li>
+                            <li>Collected qualitative feedback on perceived ease of use</li>
+                        </ul>
+                    </div>
+                    
+                    <h5 class="mb-4">User Flow Tested</h5>
+                    <p class="mb-3">I mapped the critical conversion path to test:</p>
+                    <img src="images/delish-user-flow-chart.png" 
+                         alt="User Flow Chart" 
+                         class="img-fluid mb-5 rounded shadow">
+                    
+                    <h5 class="mb-4">Design Variations Tested</h5>
+                    
+                    <!-- Option 1 -->
+                    <div class="mb-5">
+                        <div class="ab-test-card">
+                            <div class="row align-items-start">
+                                <div class="col-lg-8 mb-4 mb-lg-0">
+                                    <img src="images/delish-option-a-screens.png" 
+                                         alt="Design Option 1" 
+                                         class="img-fluid rounded shadow">
+                                </div>
+                                <div class="col-lg-4">
+                                    <span class="badge bg-secondary mb-3">OPTION A</span>
+                                    <h5 class="mb-3">Tab-Based Navigation</h5>
+                                    <p style="font-size: 0.9rem;"><strong>Design Rationale:</strong> Traditional bottom tab bar for familiarity</p>
+                                    <p style="font-size: 0.9rem;" class="mb-3"><strong>Key Features:</strong></p>
+                                    <ul style="font-size: 0.9rem;">
+                                        <li>5 tabs: Search, Feed, Lists, Share, Profile</li>
+                                        <li>Separate share button</li>
+                                        <li>More navigation steps</li>
+                                    </ul>
+                                    <div class="test-result" style="background: #FFEBEE; border-color: #F44336;">
+                                        <p class="mb-1" style="font-size: 0.85rem;"><strong>Results:</strong></p>
+                                        <p class="mb-0" style="font-size: 0.85rem;">❌ 45% first-share rate<br>❌ Avg 12 seconds to share<br>❌ Users confused by multiple tabs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Option 2 -->
+                    <div class="mb-5">
+                        <div class="ab-test-card">
+                            <div class="row align-items-start">
+                                <div class="col-lg-8 mb-4 mb-lg-0">
+                                    <img src="images/delish-option-b-screens.png" 
+                                         alt="Design Option 2" 
+                                         class="img-fluid rounded shadow">
+                                </div>
+                                <div class="col-lg-4">
+                                    <span class="badge bg-success mb-3">OPTION B - WINNER</span>
+                                    <h5 class="mb-3">Contextual Actions</h5>
+                                    <p style="font-size: 0.9rem;"><strong>Design Rationale:</strong> Integrated save & share in discovery flow</p>
+                                    <p style="font-size: 0.9rem;" class="mb-3"><strong>Key Features:</strong></p>
+                                    <ul style="font-size: 0.9rem;">
+                                        <li>In-line share CTA after save</li>
+                                        <li>Reduced cognitive load</li>
+                                        <li>Fewer steps to conversion</li>
+                                    </ul>
+                                    <div class="test-result">
+                                        <p class="mb-1" style="font-size: 0.85rem;"><strong>Results:</strong></p>
+                                        <p class="mb-0" style="font-size: 0.85rem;">✅ 78% first-share rate (+33%)<br>✅ Avg 6 seconds to share (-50%)<br>✅ "Feels natural and intuitive"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <h5 class="mb-3"><i class="fas fa-lightbulb me-2"></i>Key Insight from Testing</h5>
+                        <p class="mb-0">Option B's <strong>contextual action design</strong> reduced friction in the viral loop by 50%, directly supporting the marketing goal of maximizing organic acquisition through shares. This data-driven decision shaped the final product architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final Product -->
+    <section class="py-5" id="product">
+        <div class="container">
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>04.<br>Visual<br>Identity</h6>
+                </div>
+                <div>
+                    <h3 class="mb-4">Brand Design for Market Differentiation</h3>
+                    <p class="mb-4">After validating the product architecture through testing, I developed the visual identity and brand system—ensuring the design would support marketing objectives of premium positioning and viral shareability.</p>
+                    
+                    <h5 class="mb-3">Design Strategy</h5>
+                    <p><strong>I drew inspiration from fine dining aesthetics</strong> to position Delish as a premium, curated experience—differentiating from the cluttered, ad-heavy interfaces of competitors.</p>
+                    
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-6">
+                            <div class="highlight-box">
+                                <h6>Visual Identity Goals</h6>
+                                <ul class="mb-0" style="font-size: 0.9rem;">
+                                    <li>Minimalist, sophisticated aesthetic</li>
+                                    <li>High-contrast for accessibility</li>
+                                    <li>Photography-forward (food as hero)</li>
+                                    <li>Shareable screen designs for virality</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="highlight-box">
+                                <h6>Design System Deliverables</h6>
+                                <ul class="mb-0" style="font-size: 0.9rem;">
+                                    <li>Complete component library (Figma)</li>
+                                    <li>Brand guidelines documentation</li>
+                                    <li>Marketing asset templates</li>
+                                    <li>Social media content specs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Showcase -->
+    <section class="py-5" style="background-color: #FEF9F4;">
+        <div class="container">
+            <h2 class="text-center mb-3">Final Product Design</h2>
+            <p class="text-center text-muted mb-5"><em>Complete UI design and user flows designed by me</em></p>
+            
+            <!-- Sign In -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>01.<br>Onboarding</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Welcome & Sign In</h4>
+                    <p class="mb-4">Streamlined authentication optimized for conversion—minimizing friction to get users discovering immediately</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/delish-intro-screen.png" 
+                                 alt="Intro Screen" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/delish-onboarding-screen.png" 
+                                 alt="Onboarding" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Discover -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>02.<br>Discovery</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Search & Explore</h4>
+                    <p class="mb-4">Location-based discovery with advanced filters—delivering on the personalization value proposition identified in research</p>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <img src="images/delish-search-screen.png" 
+                                 alt="Search Screen" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/delish-restaurant-details.png" 
+                                 alt="Restaurant Details" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/delish-discover-screen.png" 
+                                 alt="Discover Page" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Save -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>03.<br>Organization</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Save to Lists</h4>
+                    <p class="mb-4">Flexible list creation encourages content curation—positioning users as tastemakers in their social circles</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/delish-save-screen-1.png" 
+                                 alt="Save Screen" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/delish-save-screen-2.png" 
+                                 alt="Save to List" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Share -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>04.<br>Sharing</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Share with Friends</h4>
+                    <p class="mb-4">The viral loop engine—contextual share prompts activate network effects and drive organic user acquisition</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/delish-share-screen-1.png" 
+                                 alt="Share Screen" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/delish-share-screen-2.png" 
+                                 alt="Share with Friends" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Feed -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>05.<br>Community</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Social Feed</h4>
+                    <p class="mb-4">Trust-based discovery through friend recommendations—building on research insight that users prefer peer reviews</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img src="images/delish-feed-screen.png" 
+                                 alt="Social Feed" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/delish-post-details.png" 
+                                 alt="Post Details" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile -->
+            <div class="content-with-side-title">
+                <div class="side-title">
+                    <h6>06.<br>Profile</h6>
+                </div>
+                <div>
+                    <h4 class="mb-3">Personal Curation</h4>
+                    <p class="mb-4">Profile as marketing tool—shareable recommendations create personal brand value and incentivize continued engagement</p>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <img src="images/delish-profile-screen.png" 
+                                 alt="Profile" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/delish-lists-screen.png" 
+                                 alt="Lists" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="images/delish-favorites-screen.png" 
+                                 alt="Favorites" 
+                                 class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Takeaways -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="text-center mb-5">Key Marketing Takeaways</h2>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h5><i class="fas fa-chart-bar me-2" style="color: #9C8B7A;"></i>Research-Validated Strategy</h5>
+                                <p class="mb-0">Conducted primary and secondary research to validate market opportunity before design—ensuring product-market fit and defensible positioning against 5 established competitors.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h5><i class="fas fa-sync-alt me-2" style="color: #9C8B7A;"></i>Data-Driven Iteration</h5>
+                                <p class="mb-0">A/B tested core user flows with 8 participants, achieving 33% improvement in conversion rate—directly supporting organic acquisition goals through measurable UX optimization.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h5><i class="fas fa-rocket me-2" style="color: #9C8B7A;"></i>Growth Architecture</h5>
+                                <p class="mb-0">Designed viral loops into product foundation—prioritizing features that leverage social graphs for zero-cost user acquisition vs. paid marketing dependence.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ab-test-card">
+                                <h5><i class="fas fa-layer-group me-2" style="color: #9C8B7A;"></i>Scalable Brand System</h5>
+                                <p class="mb-0">Built comprehensive Design System with marketing asset templates—ensuring brand consistency across campaigns and enabling rapid execution for go-to-market phases.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5 pt-5">
+                        <h3>Thanks for reading!</h3>
+                        <p class="text-muted mb-4"><em>This project demonstrates my ability to combine marketing strategy, user research,<br>and product design to build growth-focused digital experiences.</em></p>
+                        <p class="text-muted"><strong>Want to discuss this project or explore collaboration opportunities?</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="footer-brand">
+                        <span class="logo-text">AD</span>
+                        <p class="footer-tagline mt-2">Visual Artist • Designer • UW Graduate 2025</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links-wrapper">
+                        <h4 class="footer-title mb-3">Connect</h4>
+                        <div class="footer-links">
+                            <a href="mailto:ashleyldinh@gmail.com" class="footer-link">ashleyldinh@gmail.com</a>
+                            <a href="tel:206-631-9362" class="footer-link">206-631-9362</a>
+                            <a href="https://www.ashleyldinh.com" class="footer-link">www.ashleyldinh.com</a>
+                            <a href="https://www.linkedin.com/in/ashleyldinh" target="_blank" class="footer-link">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="footer-bottom">
+                        <p class="copyright">&copy; 2025 Ashley (Ash) Dinh. All rights reserved.</p>
+                        <p class="footer-credit">Designed & Developed with ♥ in Seattle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
