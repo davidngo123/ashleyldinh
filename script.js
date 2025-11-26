@@ -1,6 +1,11 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Smooth scrolling for navigation links (exclude buttons)
+document.querySelectorAll('a[href^="#"]:not(.back-to-top):not(.scroll-down-btn)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        // Don't process if it's the back to top button
+        if (this.id === 'backToTop') {
+            return;
+        }
+        
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
@@ -20,9 +25,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header background on scroll
+// Throttle function for better scroll performance
+function throttle(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Header background on scroll - Optimized
 const header = document.querySelector('.header');
-window.addEventListener('scroll', function() {
+const updateHeader = throttle(() => {
     if (window.scrollY > 50) {
         header.style.background = 'rgba(232, 221, 211, 0.98)';
         header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -30,25 +48,9 @@ window.addEventListener('scroll', function() {
         header.style.background = 'rgba(232, 221, 211, 0.95)';
         header.style.boxShadow = 'none';
     }
-});
+}, 100);
 
-// Back to top button
-const backToTopButton = document.getElementById('backToTop');
-
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
-
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+window.addEventListener('scroll', updateHeader, { passive: true });
 
 // Add scroll reveal animation
 const observerOptions = {
@@ -101,28 +103,6 @@ if (contactForm) {
     });
 }
 
-// Active navigation link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
 // Add loading animation to images
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img');
@@ -133,19 +113,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Back to top button (optimized) - MOVED BEFORE SIDE NAV
+const backToTopButton = document.getElementById('backToTop');
+if (backToTopButton) {
+    const toggleBackToTop = throttle(() => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('show');
+            backToTopButton.classList.remove('visible');
+        }
+    }, 100);
 
-// ...existing code...
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
 
-// Side navigation active state for index page
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        
+        // Scroll to top
+        window.scrollTo({ 
+            top: 0, 
+            behavior: 'smooth' 
+        });
+        
+        return false;
+    }, true); // Use capture phase
+}
+
+// Scroll down button
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+if (scrollDownBtn) {
+    scrollDownBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        return false;
+    }, true); // Use capture phase
+}
+
+// Side navigation active state for index page (optimized) - MOVED AFTER BUTTONS
 if (document.querySelector('.side-nav')) {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.side-nav a');
 
-    window.addEventListener('scroll', () => {
+    const updateActiveNav = throttle(() => {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
@@ -157,32 +180,25 @@ if (document.querySelector('.side-nav')) {
                 link.classList.add('active');
             }
         });
-    });
+    }, 100);
 
-    // Smooth scrolling for side nav
-    document.querySelectorAll('.side-nav a').forEach(anchor => {
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+    // Smooth scrolling for side nav ONLY (not back to top button)
+    document.querySelectorAll('.side-nav a:not(#backToTop)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Extra safety check
+            if (this.id === 'backToTop' || this.classList.contains('back-to-top')) {
+                return;
+            }
+            
             e.preventDefault();
+            e.stopPropagation();
+            
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
-    });
-}
-
-// Back to top button
-const backToTopButton = document.getElementById('backToTop');
-if (backToTopButton) {
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }

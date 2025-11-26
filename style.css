@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Root Variables - Exact color palette from ashleyldinh.com */
 :root {
     --bg-color: #E8DDD3;
@@ -1134,13 +1138,49 @@ textarea.form-control {
 
 /* Hero Section - Index Page (Reduced Height with next section visible) */
 .hero-section-index {
-    min-height: 75vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
     padding: 12rem 0 4rem; /* Increased even more for fixed navbar */
     background: linear-gradient(135deg, #f8f5f2 0%, #e8ddd3 100%);
 }
 
+
+/* Add styles for the scroll down button */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down-btn:hover {
+    transform: translateX(-50%) translateY(-5px);
+    background: currentColor;
+}
+
+.scroll-down-btn:hover i {
+    color: var(--background-color, #fff);
+}
+
+.scroll-down-btn i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
 .greeting-index {
     font-family: 'Alice', serif;
     font-size: 1.5rem;
@@ -1548,3 +1588,40 @@ textarea.form-control {
     .navbar-logo {
         height: 28px;
     }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Add will-change for better performance */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 2s ease-in-out infinite;
+    will-change: transform;
+}
+
+.scroll-down-btn:hover {
+    transform: translateX(-50%) translateY(-5px);
+    background: currentColor;
+    animation-play-state: paused; /* Pause animation on hover */
+}
