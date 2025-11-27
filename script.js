@@ -113,14 +113,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Back to top button (optimized) - MOVED BEFORE SIDE NAV
+// Flag to prevent conflicting scrolls
+let isScrollingProgrammatically = false;
+let scrollTimeout = null;
+
+// Back to top button (optimized)
 const backToTopButton = document.getElementById('backToTop');
 if (backToTopButton) {
     const toggleBackToTop = throttle(() => {
-        if (window.pageYOffset > 300) {
+        if (!isScrollingProgrammatically && window.pageYOffset > 300) {
             backToTopButton.classList.add('show');
             backToTopButton.classList.add('visible');
-        } else {
+        } else if (!isScrollingProgrammatically && window.pageYOffset <= 300) {
             backToTopButton.classList.remove('show');
             backToTopButton.classList.remove('visible');
         }
@@ -133,14 +137,36 @@ if (backToTopButton) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         
-        // Scroll to top
-        window.scrollTo({ 
-            top: 0, 
-            behavior: 'smooth' 
-        });
+        // Set flag to prevent other scroll handlers - LONGER DURATION
+        isScrollingProgrammatically = true;
+        
+        // Clear any existing timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        // Disable smooth scroll temporarily
+        document.documentElement.style.scrollBehavior = 'auto';
+        document.body.style.scrollBehavior = 'auto';
+        
+        // Scroll to top instantly
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        
+        // Re-enable smooth scroll after a delay
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+            document.body.style.scrollBehavior = 'smooth';
+        }, 100);
+        
+        // Reset flag after a MUCH longer delay to ensure scroll has fully settled
+        scrollTimeout = setTimeout(() => {
+            isScrollingProgrammatically = false;
+        }, 1500);
         
         return false;
-    }, true); // Use capture phase
+    }, true);
 }
 
 // Scroll down button
@@ -151,21 +177,39 @@ if (scrollDownBtn) {
         e.stopPropagation();
         e.stopImmediatePropagation();
         
+        // Set flag to prevent other scroll handlers
+        isScrollingProgrammatically = true;
+        
+        // Clear any existing timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
         const aboutSection = document.getElementById('about');
         if (aboutSection) {
             aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         
+        // Reset flag after scroll completes
+        scrollTimeout = setTimeout(() => {
+            isScrollingProgrammatically = false;
+        }, 1500);
+        
         return false;
-    }, true); // Use capture phase
+    }, true);
 }
 
-// Side navigation active state for index page (optimized) - MOVED AFTER BUTTONS
+// Side navigation active state for index page (optimized)
 if (document.querySelector('.side-nav')) {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.side-nav a');
 
     const updateActiveNav = throttle(() => {
+        // Don't update if we're programmatically scrolling
+        if (isScrollingProgrammatically) {
+            return;
+        }
+        
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -184,7 +228,7 @@ if (document.querySelector('.side-nav')) {
 
     window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-    // Smooth scrolling for side nav ONLY (not back to top button)
+    // Smooth scrolling for side nav ONLY
     document.querySelectorAll('.side-nav a:not(#backToTop)').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             // Extra safety check
@@ -195,10 +239,23 @@ if (document.querySelector('.side-nav')) {
             e.preventDefault();
             e.stopPropagation();
             
+            // Set flag for programmatic scrolling
+            isScrollingProgrammatically = true;
+            
+            // Clear any existing timeout
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+            
+            // Reset flag after scroll completes
+            scrollTimeout = setTimeout(() => {
+                isScrollingProgrammatically = false;
+            }, 1500);
         });
     });
 }

@@ -1625,3 +1625,68 @@ textarea.form-control {
     background: currentColor;
     animation-play-state: paused; /* Pause animation on hover */
 }
+
+
+/* Add styles for the scroll down button */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 2s ease-in-out infinite;
+    will-change: transform;
+}
+
+.scroll-down-btn:hover {
+    transform: translateX(-50%) translateY(-5px);
+    background: currentColor;
+    animation-play-state: paused;
+}
+
+.scroll-down-btn:hover i {
+    color: var(--background-color, #fff);
+}
+
+.scroll-down-btn i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Mobile adjustments for scroll down button */
+@media (max-width: 991px) {
+    .scroll-down-btn {
+        bottom: 60px; /* Move it higher on tablets */
+    }
+}
+
+@media (max-width: 767px) {
+    .scroll-down-btn {
+        bottom: 80px; /* Move it even higher on mobile phones */
+        width: 45px;
+        height: 45px;
+    }
+    
+    .scroll-down-btn i {
+        font-size: 18px;
+    }
+}
