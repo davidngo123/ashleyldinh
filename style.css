@@ -1675,18 +1675,12 @@ textarea.form-control {
 /* Mobile adjustments for scroll down button */
 @media (max-width: 991px) {
     .scroll-down-btn {
-        bottom: 60px; /* Move it higher on tablets */
+        display: none; /* Hide on tablets */
     }
 }
 
 @media (max-width: 767px) {
     .scroll-down-btn {
-        bottom: 80px; /* Move it even higher on mobile phones */
-        width: 45px;
-        height: 45px;
-    }
-    
-    .scroll-down-btn i {
-        font-size: 18px;
+        display: none; /* Hide on mobile phones */
     }
 }
